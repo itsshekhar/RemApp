@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7EC0F4"
+    tools:context=".AddReminder">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Enter Reminder Details"
+        android:textAlignment="center"
+        android:textColor="#89069F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="52dp"
+        android:text="Title"
+        android:textColor="#89069F"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/datetextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:hint="DD/MM/YYYY"
+        android:onClick="selectDate"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dTextView"
+        app:layout_constraintStart_toEndOf="@+id/dTextView"
+        app:layout_constraintTop_toTopOf="@+id/dTextView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:hint="HH:MM"
+        android:onClick="selectTime"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tTextView"
+        app:layout_constraintStart_toEndOf="@+id/tTextView"
+        app:layout_constraintTop_toTopOf="@+id/tTextView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/timeButton"
+        android:layout_width="64dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="4dp"
+        android:onClick="selectTime"
+        app:icon="@android:drawable/ic_menu_add"
+        app:layout_constraintBottom_toBottomOf="@+id/timeTextView"
+        app:layout_constraintStart_toEndOf="@+id/timeTextView"
+        app:layout_constraintTop_toTopOf="@+id/timeTextView"
+        app:layout_constraintVertical_bias="0.303" />
+
+    <Button
+        android:id="@+id/calenderBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:onClick="calenderBtnClick"
+        android:text="Add Reminder"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeButton" />
+
+    <TextView
+        android:id="@+id/tTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Time"
+        android:textColor="#89069F"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/dTextView"
+        app:layout_constraintTop_toBottomOf="@+id/dTextView" />
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:ems="10"
+        android:inputType="textShortMessage"
+        app:layout_constraintBottom_toBottomOf="@+id/descriptionTextView"
+        app:layout_constraintStart_toEndOf="@+id/descriptionTextView"
+        app:layout_constraintTop_toTopOf="@+id/descriptionTextView"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Description"
+        android:textColor="#89069F"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <TextView
+        android:id="@+id/dTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Date"
+        android:textColor="#89069F"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/descriptionTextView"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionEditText" />
+
+    <Button
+        android:id="@+id/dateButton"
+        android:layout_width="61dp"
+        android:layout_height="54dp"
+        android:onClick="selectDate"
+        app:icon="@android:drawable/ic_menu_add"
+        app:layout_constraintBottom_toBottomOf="@+id/datetextView"
+        app:layout_constraintStart_toEndOf="@+id/datetextView"
+        app:layout_constraintTop_toTopOf="@+id/datetextView"
+        app:layout_constraintVertical_bias="0.233" />
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/titleTextView"
+        app:layout_constraintStart_toEndOf="@+id/titleTextView"
+        app:layout_constraintTop_toTopOf="@+id/titleTextView"
+        app:layout_constraintVertical_bias="0.476" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
