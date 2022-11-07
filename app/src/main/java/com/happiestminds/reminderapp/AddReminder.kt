@@ -157,7 +157,7 @@ class AddReminder : AppCompatActivity(), TimePickerDialog.OnTimeSetListener {
             value.put(Events.DESCRIPTION,descriptionText.text.toString());
             value.put(Events.CALENDAR_ID, 1);
             value.put(Events.EVENT_TIMEZONE, "IST")
-            value.put(Events.HAS_ALARM, 10)
+            value.put(Events.HAS_ALARM, 1)
 
 
 //            var id1: Int
@@ -170,11 +170,11 @@ class AddReminder : AppCompatActivity(), TimePickerDialog.OnTimeSetListener {
             if (evenID != null) {
                 dataReceived.eventId = evenID
                 if (DBWrapper(this).addStudent(dataReceived)) {
-                    Toast.makeText(this, "Student details added $dataReceived", Toast.LENGTH_LONG)
+                    Toast.makeText(this, "Reminder Added ", Toast.LENGTH_LONG)
                         .show()
 
                 } else {
-                    Toast.makeText(this, "Student details Not Added", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Reminder Not added  ", Toast.LENGTH_LONG).show()
 
                 }
 

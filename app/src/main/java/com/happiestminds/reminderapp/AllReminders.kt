@@ -1,6 +1,8 @@
 package com.happiestminds.reminderapp
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,6 +12,7 @@ class AllReminders : AppCompatActivity() {
     lateinit var allRemindersList: ListView
     var remindersList = mutableListOf<DataEntity>()
     var titleList = mutableListOf<String>()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,9 +54,15 @@ class AllReminders : AppCompatActivity() {
 
     override fun onResume() {
 
+        if (checkSelfPermission(Manifest.permission.READ_CALENDAR)!= PackageManager.PERMISSION_GRANTED){
+            requestPermissions(arrayOf(Manifest.permission.READ_CALENDAR,Manifest.permission.WRITE_CALENDAR),1)
 
+        }
         super.onResume()
         setUpData()
+
+
+
 
 
     }
@@ -83,6 +92,7 @@ class AllReminders : AppCompatActivity() {
         cursor.moveToFirst()
         remindersList.clear()
         titleList.clear()
+
         if (cursor.count > 0) {
             do {
 
@@ -102,7 +112,6 @@ class AllReminders : AppCompatActivity() {
 
 
 
-            Toast.makeText(this, "found : ${remindersList.count()}", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -111,6 +120,7 @@ class AllReminders : AppCompatActivity() {
         startActivity(intent)
 
     }
+
 
 
 }

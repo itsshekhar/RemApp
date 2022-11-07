@@ -1,7 +1,9 @@
 package com.happiestminds.reminderapp
 
+import android.Manifest
 import android.content.ContentUris
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,13 +17,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        Timer().schedule(700){
-            runOnUiThread{
+        Timer().schedule(700) {
+            runOnUiThread {
                 val allRemindersIntent = Intent(this@MainActivity, AllReminders().javaClass)
                 startActivity(allRemindersIntent)
                 finish()
             }
         }
 
+
     }
+
+
 }
